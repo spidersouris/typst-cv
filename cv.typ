@@ -104,7 +104,11 @@
           )[#info.personal.institutional-email],
       )
     } else {
-      box(link("mailto:" + info.personal.email))
+      box(
+        fa-icon("envelope-open")
+          + " "
+          + link("mailto:" + info.personal.email)[#info.personal.email],
+      )
     },
     if uservars.showNumber {
       box(link("tel:" + info.personal.phone))
@@ -157,8 +161,9 @@
 
 #let cvwork(info, title: "Work Experience", isbreakable: true) = {
   if info.work != none {
-    block[
+    block(breakable: isbreakable)[
       == #title
+
       #for w in info.work {
         // Create a block layout for each work entry
         let index = 0
@@ -174,17 +179,20 @@
             #text(
               style: "italic",
               weight: 0,
-            )[#if (none, "").all(x => x != w.img) [ #box(image(w.img), height: 9pt) ] *#link(w.url)[#w.organization]*] #h(1fr)
+            )[
+              #if utils._is(w.img) [
+              #box(image(w.img), height: 9pt)
+            ] *#link(w.url)[#w.organization]*] #h(1fr)
             #utils.daterange(start, end) \
             // Highlights or Description
             #show link: underline
-            #if p.highlights != none {
+            #if utils._is(p.highlights) {
               for hi in p.highlights [
                 - #eval(hi, mode: "markup")
               ]
             }
           ]
-          index = index + 1
+          index += 1
         }
       }
     ]
@@ -193,22 +201,23 @@
 
 #let cveducation(info, title: "Education", isbreakable: true) = {
   if info.education != none {
-    block[
+    block(breakable: isbreakable)[
       == #title
+
       #for edu in info.education {
         let start = utils.strpdate(edu.startDate)
         let end = utils.strpdate(edu.endDate)
 
         let edu-items = ""
-        if edu.honors != none {
+        if utils._is(edu.honors) {
           edu-items = edu-items + "- *Honors*: " + edu.honors.join(", ") + "\n"
         }
-        if edu.courses != none {
+        if utils._is(edu.courses) {
           edu-items = (
             edu-items + "- *Courses*: " + edu.courses.join(", ") + "\n"
           )
         }
-        if edu.highlights != none {
+        if utils._is(edu.highlights) {
           for hi in edu.highlights {
             edu-items = edu-items + "- " + hi + "\n"
           }
@@ -218,16 +227,19 @@
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Institution and Location
-          #if edu.url != none [
+          #if utils._is(edu.url) [
             *#link(edu.url)[#edu.title]* #h(1fr) *#edu.location* \
           ] else [
             *#edu.title* #h(1fr) *#edu.location* \
           ]
           // Line 2: Degree and Date
-          #if (none, "").all(x => x != edu.img) [#box(
+          #if utils._is(edu.img) [
+            #box(
               image(edu.img),
               height: 9pt,
-            )] #link(edu.url)[#text(style: "italic")[#edu.institution]] #h(1fr)
+            )
+          ]
+          #link(edu.url)[#text(style: "italic")[#edu.institution]] #h(1fr)
           #utils.daterange(start, end) \
           #eval(edu-items, mode: "markup")
         ]
@@ -241,9 +253,10 @@
   title: "Leadership and Activities",
   isbreakable: true,
 ) = {
-  if info.affiliations != none {
-    block[
+  if utils._is(info.affiliations) {
+    block(breakable: isbreakable)[
       == #title
+
       #for org in info.affiliations {
         // Parse ISO date strings into datetime objects
         let start = utils.strpdate(org.startDate)
@@ -252,7 +265,7 @@
         // Create a block layout for each affiliation entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Organization and Location
-          #if org.url != none [
+          #if utils._is(org.url) [
             *#link(org.url)[#org.organization]* #h(1fr) *#org.location* \
           ] else [
             *#org.organization* #h(1fr) *#org.location* \
@@ -261,7 +274,7 @@
           #text(style: "italic")[#org.position] #h(1fr)
           #utils.daterange(start, end) \
           // Highlights or Description
-          #if org.highlights != none {
+          #if utils._is(org.highlights) {
             for hi in org.highlights [
               - #eval(hi, mode: "markup")
             ]
@@ -274,13 +287,43 @@
 
 #let cvprojects(info, uservars, title: "Projects", isbreakable: true) = {
   show link: underline
-  if info.projects != none {
-    block[
+
+  let create_project_entry = (project, start, end) => {
+    if (
+      utils._is(project.url) and utils._is(project.github)
+    ) [
+      *#project.name | #link(project.url) | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none { box(
+              image(uservars.githubStarIcon),
+              height: 7pt
+            ) + " " + str(project.github-stars) }* #h(1fr) #utils.daterange(
+            start,
+            end)
+    ] else if utils._is(project.github) [
+      *#project.name | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none { box(
+              image(uservars.githubStarIcon),
+              height: 7pt
+            ) + " " + str(project.github-stars) }* #h(1fr) #utils.daterange(
+            start,
+            end)
+    ] else if utils._is(project.url) [
+      *#link(project.url)[#project.name | #link(project.url)]* #h(1fr) #utils.daterange(
+            start,
+            end)
+    ] else [
+      *#project.name* #h(1fr) #utils.daterange(
+            start,
+            end)
+    ]
+  }
+
+  if utils._is(info.projects) {
+    block(breakable: isbreakable)[
       == #title
+
       #for project in info.projects {
         // Parse ISO date strings into datetime objects
         let start = utils.strpdate(project.startDate)
-        let end = if project.endDate != "" {
+        let end = if utils._is(project.endDate) {
           utils.strpdate(project.endDate)
         } else {
           start
@@ -288,34 +331,7 @@
         // Create a block layout for each project entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Project Name
-          #if (
-            (none, "").all(x => x != project.url)
-              and (none, "").all(x => (
-                x != project.github
-              ))
-          ) [
-            *#project.name | #link(project.url) | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none { box(
-              image(uservars.githubStarIcon),
-              height: 7pt
-            ) + " " + str(project.github-stars) }* #h(1fr) #utils.daterange(
-            start,
-            end)
-          ] else if project.github != none [
-            *#project.name | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none { box(
-              image(uservars.githubStarIcon),
-              height: 7pt
-            ) + " " + str(project.github-stars) }* #h(1fr) #utils.daterange(
-            start,
-            end)
-          ] else if project.url != none [
-            *#link(project.url)[#project.name | #link(project.url)]* #h(1fr) #utils.daterange(
-            start,
-            end)
-          ] else [
-            *#project.name* #h(1fr) #utils.daterange(
-            start,
-            end)
-          ]
+          #create_project_entry(project, start, end)
           // Summary or Description
           #for hi in project.highlights [
             - #eval(hi, mode: "markup")
@@ -327,22 +343,23 @@
 }
 
 #let cvawards(info, title: "Honors and Awards", isbreakable: false) = {
-  if info.awards != none {
+  if utils._is(info.awards) {
     block(breakable: isbreakable)[
       == #title
+
       #for award in info.awards {
         // Parse ISO date strings into datetime objects
         let date = utils.strpdate(award.date)
         // Create a block layout for each award entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Award Title and Location
-          #if award.url != none [
+          #if utils._is(award.url) [
             *#link(award.url)[#award.title]* #h(1fr) *#award.location* \
           ] else [
             *#award.title* #h(1fr) *#award.location* \
           ]
-          // Line 2: Issuer and Date
-          Issued by #text(style: "italic")[#award.issuer] #h(1fr) #date \
+          // Line 2: Subtext and Date
+          #eval(award.subtext, mode: "markup") #h(1fr) #date \
           // Summary or Description
           #if award.highlights != none {
             for hi in award.highlights [
@@ -360,8 +377,8 @@
   title: "Licenses and Certifications",
   isbreakable: true,
 ) = {
-  if info.certificates != none {
-    block[
+  if utils._is(info.certificates) {
+    block(breakable: isbreakable)[
       == #title
 
       #for cert in info.certificates {
@@ -379,8 +396,8 @@
             ID: #raw(cert.id)
           ]
           \
-          // Line 2: Issuer and Date
-          Issued by #text(style: "italic")[#cert.issuer] #h(1fr) #date \
+          // Line 2: Subtext and Date
+          #eval(cert.subtext, mode: "markup") #h(1fr) #date \
         ]
       }
     ]
@@ -393,9 +410,10 @@
   title: "Talks and Presentations",
   isbreakable: false,
 ) = {
-  if info.talks != none {
+  if utils._is(info.talks) {
     block(breakable: isbreakable)[
       == #title
+
       #for talk in info.talks {
         // Parse ISO date strings into datetime objects
         let date = utils.strpdate(talk.date)
@@ -403,17 +421,24 @@
         let authors = utils.format-authors(
           talk.authors,
           talk.authors.len(),
-          [Doyen, E.],
+          uservars.authorname,
         )
 
         // Create a block layout for each talk entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Talk Title and Location
-          *#talk.name* #if (none, "").all(x => x != talk.english) { text(style: "italic", [(#talk.english)]) } #h(1fr) *#talk.location* \
+          *#talk.name*
+          #if utils._is(talk.english) {
+            text(style: "italic", [(#talk.english)])
+          } #h(1fr) *#talk.location* \
           // Line 2: Event and Date
-          #talk.conference-intro #text(
-            style: "italic",
-          )[#talk.conference (#authors) #if (none, "").all(x => x != talk.url) { link(talk.url)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)] } ] #h(1fr) #date \
+          #talk.conference-intro
+          #text(style: "italic")[#talk.conference (#authors)
+            #if utils._is(talk.url) {
+              link(
+                talk.url,
+              )[ #fa-icon("external-link", size: uservars.fontsize * 0.8)]
+            }] #h(1fr) #date \
         ]
       }
     ]
@@ -426,8 +451,8 @@
   title: "Schools",
   isbreakable: true,
 ) = {
-  if info.schools != none {
-    block[
+  if utils._is(info.schools) {
+    block(breakable: isbreakable)[
       == #title
       #for school in info.schools {
         // Parse ISO date strings into datetime objects
@@ -436,10 +461,13 @@
         // Create a block layout for each school entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: school Title and Location
-          *#school.name* #if (none, "").all(x => x != school.url) { link(school.url)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)] } #h(1fr) *#school.location* \
+          *#school.name*
+          #if utils._is(school.url) {
+            link(school.url)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)]
+          } #h(1fr) *#school.location* \
           // Line 2: Event and Date
           #text(style: "italic")[#school.affiliation] #h(1fr) #date \
-          #if school.highlights != none [
+          #if utils._is(school.highlights) [
             #for hi in school.highlights [
               - #eval(hi, mode: "markup")
             ]
@@ -455,8 +483,8 @@
   title: "Teaching Responsibilities",
   isbreakable: true,
 ) = {
-  if info.teaching != none {
-    block[
+  if utils._is(info.teaching) {
+    block(breakable: isbreakable)[
       == #title
       #table(
         columns: (1fr, 1fr, auto, auto),
@@ -490,31 +518,49 @@
 
 #let cvpublications(
   info,
+  uservars,
   title: "Research and Publications",
   isbreakable: true,
 ) = {
-  //TODO very important: on new website, create separate pages to show off posters/slides from talks
   show link: underline
-  if info.publications != none {
-    block[
+
+  let create_publication = (pub, authors) => {
+    if pub.type == "app" {
+      block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
+        #text(style: "italic")[#authors] (#pub.year). #pub.name (v#pub.version).
+        #if utils._is(pub.doi) {
+          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+        }
+      ]
+    } else if pub.type == "poster" {
+      block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
+        #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.conference]. #pub.location.
+        #if utils._is(pub.doi) {
+          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+        }
+      ]
+    } else {
+      block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
+        #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.journal]. #pub.volume. #pub.pages.
+        #if utils._is(pub.doi) {
+          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+        }
+      ]
+    }
+  }
+
+  if utils._is(info.publications) {
+    block(breakable: isbreakable)[
       == #title
+
       #for pub in info.publications {
         let authors = utils.format-authors(
           pub.authors,
           pub.authors.len(),
-          [Doyen, E.],
+          uservars.authorname,
         )
 
-        // Create a block layout for each publication entry
-        if pub.type == "app" {
-          block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-            #text(style: "italic")[#authors] (#pub.year). #pub.name (v#pub.version). #ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]
-          ]
-        } else if pub.type == "poster" {
-          block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-            #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.conference]. #pub.location. #if pub.doi != "" { [ai-icon("depsy") link("https://doi.org/" + pub.doi)[#pub.doi]] }
-          ]
-        }
+        create_publication(pub, authors)
       }
     ]
   }
@@ -526,23 +572,22 @@
   isbreakable: true,
 ) = {
   if (
-    (info.languages != none)
-      or (info.skills != none)
-      or (
-        info.interests != none
-      )
+    utils._is(info.skills)
+      or utils._is(info.interests)
+      or utils._is(info.languages)
   ) {
     block(breakable: isbreakable)[
       == #title
-      #if (info.skills != none) [
+
+      #if utils._is(info.skills) [
         #for group in info.skills [
           - *#group.category*: #group.skills.join(", ")
         ]
       ]
-      #if (info.interests != none) [
+      #if utils._is(info.interests) [
         - *Interests*: #info.interests.join(", ")
       ]
-      #if (info.languages != none) [
+      #if utils._is(info.languages) [
         #let langs = ()
         #for lang in info.languages {
           langs.push([#lang.language (#lang.fluency)])
@@ -554,12 +599,13 @@
 }
 
 #let cvreferences(info, title: "References", isbreakable: true) = {
-  if info.references != none {
-    block[
+  if utils._is(info.references) {
+    block(breakable: isbreakable)[
       == #title
+
       #for ref in info.references {
         block(width: 100%, breakable: isbreakable)[
-          #if ref.url != none [
+          #if utils._is(ref.url) [
             - *#link(ref.url)[#ref.name]*: "#ref.reference"
           ] else [
             - *#ref.name*: "#ref.reference"

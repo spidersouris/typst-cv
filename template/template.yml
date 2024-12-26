@@ -112,7 +112,7 @@ affiliations:
 awards:
   - title: Doctoral Fellowship
     date: 2024-06-01
-    issuer: the University of Strasbourg
+    subtext: "Issued by the _University of Strasbourg_"
     url:
     location: Strasbourg, France
     highlights:

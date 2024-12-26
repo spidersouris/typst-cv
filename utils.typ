@@ -109,3 +109,11 @@
     return [#formatted_authors.join(", ", last: " & ")]
   }
 }
+
+#let _is(it) = {
+  if (none, "").all(x => x != it) {
+    true
+  } else {
+    false
+  }
+}

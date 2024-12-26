@@ -3,6 +3,8 @@
 #let cvdata = yaml("template.yml")
 
 #let uservars = (
+  authorname: [Doyen, E.], // full last name, first initial; as shown in bibliography
+  // used to highlight name in author lists
   headingfont: "Libertinus Serif",
   bodyfont: "Libertinus Serif",
   fontsize: 10pt, // 10pt, 11pt, 12pt
@@ -57,7 +59,7 @@
 #cveducation(cvdata)
 #cvwork(cvdata)
 #cvprojects(cvdata, uservars, title: "Programming Projects")
-#cvpublications(cvdata)
+#cvpublications(cvdata, uservars)
 #cvtalks(cvdata, uservars)
 #cvawards(cvdata)
 #cvschools(cvdata, uservars)
