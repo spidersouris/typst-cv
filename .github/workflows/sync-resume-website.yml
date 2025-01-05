@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - "template/template.pdf"
+  workflow_dispatch:
 
 jobs:
   sync-file:
