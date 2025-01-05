@@ -1,0 +1,26 @@
+name: Sync Resume with Website Repo
+
+on:
+  push:
+    paths:
+      - "template/template.pdf"
+
+jobs:
+  sync-file:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout typst-cv
+        uses: actions/checkout@v3
+
+      - name: Clone spidersouris.github.io
+        run: |
+          git clone https://$GITHUB_ACTOR:${{ secrets.ACTIONS_GITHUB_TOKEN }}@github.com/spidersouris/spidersouris.github.io.git
+          cd spidersouris.github.io/public
+
+      - name: Copy typst-cv:template/template.pdf to spidersouris.github.io/public
+        run: |
+          cp ../../template/template.pdf ./edoyen_resume.pdf
+          git add public/edoyen_resume.pdf
+          git commit -m "🍱 chore(auto): update resume from typst-cv repo"
+          git push
