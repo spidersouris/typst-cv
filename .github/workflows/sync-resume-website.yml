@@ -16,11 +16,11 @@ jobs:
       - name: Clone spidersouris.github.io
         run: |
           git clone https://$GITHUB_ACTOR:${{ secrets.ACTIONS_GITHUB_TOKEN }}@github.com/spidersouris/spidersouris.github.io.git
-          cd spidersouris.github.io/public
 
       - name: Copy typst-cv:template/template.pdf to spidersouris.github.io/public
         run: |
-          cp ../../template/template.pdf ./edoyen_resume.pdf
+          cp template/template.pdf spidersouris.github.io/public/edoyen_resume.pdf
+          cd spidersouris.github.io
           git add public/edoyen_resume.pdf
           git commit -m "🍱 chore(auto): update resume from typst-cv repo"
           git push
