@@ -16,6 +16,8 @@ jobs:
 
       - name: Clone spidersouris.github.io
         run: |
+          git config --global user.email ${{ secrets.EMAIL }}
+          git config --global user.name ${{ secrets.NAME }}
           git clone https://$GITHUB_ACTOR:${{ secrets.ACTIONS_GITHUB_TOKEN }}@github.com/spidersouris/spidersouris.github.io.git
 
       - name: Copy typst-cv:template/template.pdf to spidersouris.github.io/public
