@@ -15,7 +15,7 @@
   showTitle: true, // true/false show title in heading
   headingsmallcaps: true, // true/false use small caps for headings
   sendnote: false, // set to false to have sideways endnote
-  institutionalEmail: true, // set to true to show institutional email
+  institutionalEmail: false, // set to true to show institutional email
   githubStarIcon: "assets/github-star.svg", // path to GitHub star icon
 )
 
@@ -58,7 +58,7 @@
 #cvheading(cvdata, uservars)
 #cveducation(cvdata)
 #cvwork(cvdata)
-#cvprojects(cvdata, uservars, title: "Programming Projects")
+#cvprojects(cvdata, uservars, title: "Featured Programming Projects")
 #cvpublications(cvdata, uservars)
 #cvtalks(cvdata, uservars)
 #cvawards(cvdata)

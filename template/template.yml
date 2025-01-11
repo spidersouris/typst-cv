@@ -131,7 +131,6 @@ publications:
     authors: ["Doyen, Enzo", "Ruiz Fabo, Pablo"]
     version: "1.0.0"
     year: 2024
-    url: https://example.com
     doi: "10.5281/zenodo.10520031"
 
 talks:
@@ -142,7 +141,7 @@ talks:
     conference: "Séminaire LiRiC — Session 2 : inclusion et écriture"
     location: "Strasbourg, France"
     date: 2025-01-16
-    url: "https://frlc.hypotheses.org/1334"
+    url: "https://www.edoyen.com/academia#talk-bias-nlp"
   - name: Navigation structurée de métadonnées de théâtre
     english: Structured Navigation of Theater Metadata
     authors: ["Doyen, Enzo", "Ruiz Fabo, Pablo"]
@@ -150,7 +149,7 @@ talks:
     conference: "Humanités numériques en pédagogie et en recherche 2"
     location: "Strasbourg, France"
     date: 2024-10-17
-    url: "https://langtech.unistra.fr/humanites-numeriques/seance-poster-humanites-numeriques-en-pedagogie-et-recherche-2024/"
+    url: "https://www.edoyen.com/academia#poster-thealtres"
 
 schools:
   # - name: "ALPS 2025"
