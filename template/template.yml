@@ -1,5 +1,3 @@
-# yaml-language-server: $schema=https://raw.githubusercontent.com/jskherman/imprecv/main/cv.typ.schema.json
-
 personal:
   name: Enzo Doyen
   email: contact@edoyen.com
@@ -10,208 +8,209 @@ personal:
     - PhD Candidate in Natural Language Processing
   location:
     city: Strasbourg
-    region:
+    region: null
     country: France
   profiles:
     - network: LinkedIn
       username: Enzo Doyen
       url: https://linkedin.com/in/enzo-doyen
-      icon: "linkedin"
+      icon: linkedin
     - network: GitHub
       username: spidersouris
       url: https://github.com/spidersouris
-      icon: "github"
+      icon: github
     - network: ORCID
       username: Enzo Doyen
       url: https://orcid.org/0009-0005-4742-5860
-      icon: "orcid"
-
+      icon: orcid
 work:
   - organization: University of Strasbourg
     url: https://unistra.fr/
-    img: "assets/unistra.svg"
-    location: "On-site / Strasbourg, France"
+    img: assets/unistra.svg
+    location: On-site / Strasbourg, France
     positions:
-      - position: "Teaching Assistant"
-        startDate: 2024-09-01
-        endDate: "present"
-        highlights:
+      - position: Teaching Assistant
+        startDate: 2024-09-01T00:00:00.000Z
+        endDate: present
+        highlights: null
   - organization: University of Strasbourg, LilPa
     url: https://lilpa.unistra.fr/
-    img: "assets/lilpa_min.svg"
+    img: assets/lilpa_min.svg
     location: Hybrid / Strasbourg, France
     positions:
       - position: Software Engineer Intern
-        startDate: 2024-02-01
-        endDate: 2024-04-01
+        startDate: 2024-02-01T00:00:00.000Z
+        endDate: 2024-04-01T00:00:00.000Z
         highlights:
-          - Engineered a web app (https://thealtres.pages.unistra.fr/vis/) for the Thealtres project to visualize theater data, allowing users to search, filter, sort, and analyze trends across ≈1,000 plays and 10,000+ characters
+          - >-
+            Engineered a web app (https://thealtres.pages.unistra.fr/vis/) for
+            the Thealtres project to visualize theater data, allowing users to
+            search, filter, sort, and analyze trends across ≈1,000 plays and
+            10,000+ characters
           - Conceptualized and executed intuitive and appealing UI/UX design
           - Created customized, interactive data visualizations using D3.js
           - Created a custom Leaflet map leveraging the data
   - organization: Valve Corporation
     url: https://www.valvesoftware.com/en/
-    img: "assets/valve.svg"
+    img: assets/valve.svg
     location: Remote / Seattle, USA
     positions:
       - position: Bilingual Localizer (EN → FR)
-        startDate: 2017-11-01
-        endDate: "present"
+        startDate: 2017-11-01T00:00:00.000Z
+        endDate: present
         highlights:
-          - Translating Steam, the world's biggest video game digital distribution service (≈132 million monthly active users (MAU)); ≈3 million French MAUs) and major video games and hardware (Counter-Strike 2, Dota 2, Deadlock; Steam Deck, Valve Index).
-
+          - "Translating Steam, the world's biggest video game digital distribution service (≈132 million monthly active users (MAU)); ≈3\_million French MAUs) and major video games and hardware (Counter-Strike 2, Dota 2, Deadlock; Steam Deck, Valve Index)."
 education:
   - title: PhD in Natural Language Processing
     institution: University of Strasbourg, LiLPa
     url: https://lilpa.unistra.fr/
-    img: "assets/lilpa_min.svg"
-    startDate: 2024-10-01
-    endDate: 2027-10-01
+    img: assets/lilpa_min.svg
+    startDate: 2024-10-01T00:00:00.000Z
+    endDate: 2027-10-01T00:00:00.000Z
     location: Strasbourg, France
-    honors:
-    courses:
+    honors: null
+    courses: null
     highlights:
       - "*Thesis*: Mitigating Gender Biases in NLP Data for French"
       - "*Supervisor*: Amalia Todirascu"
   - title: Master's in Natural Language Processing
     institution: University of Strasbourg
     url: https://www.unistra.fr/
-    img: "assets/unistra.svg"
-    startDate: 2022-09-01
-    endDate: 2024-06-01
+    img: assets/unistra.svg
+    startDate: 2022-09-01T00:00:00.000Z
+    endDate: 2024-06-01T00:00:00.000Z
     location: Strasbourg, France
-    honors:
-    courses:
+    honors: null
+    courses: null
     highlights:
       - "*Grade*: 18.125/20 (GPA equiv.: 4.0). Highest Honors. Rank: 1/20."
-      - "*Covered Topics*: DSA; OOP; data analysis; machine learning; stats; Python; Java; JavaScript; PHP; SQL; R; RegExp; Bash"
-      - "*Thesis*: Automatic Gender-Neutral Rewriting Using Human Collective Nouns in French"
-
-affiliations:
-  # - organization: White Hat Hackers Association
-  #   position: Vice President for Internal Affairs
-  #   location: Cambridge, United Kingdom
-  #   url: https://example.com
-  #   startDate: 2020-05-30
-  #   endDate: 2021-05-30
-  #   highlights:
-  #     - But I must explain to you how all this mistaken idea of reprobating pleasure and extolling pain arose.
-  #     - But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?
-  #     - Can you then suppose that those heroic men performed their famous deeds without any motive at all?
-  # - organization: London Bridge Toastmasters Club
-  #   position: Member
-  #   location: City of London, United Kingdom
-  #   url:
-  #   startDate: 2022-06-15
-  #   endDate: 2023-06-30
-  #   highlights:
-  #     - Won Champion in the Division A District X Speech Evaluation Contest of Toastmasters International
-  #     - Promising Toastmaster of the Year (PY 2022-2023)
-  #     - Tell me, pray, what explanation do you put upon their actions?
-
+      - >-
+        *Covered Topics*: DSA; OOP; data analysis; machine learning; stats;
+        Python; Java; JavaScript; PHP; SQL; R; RegExp; Bash
+      - >-
+        *Thesis*: Automatic Gender-Neutral Rewriting Using Human Collective
+        Nouns in French
+affiliations: null
 awards:
   - title: Doctoral Fellowship
-    date: 2024-06-01
-    subtext: "Issued by the _University of Strasbourg_"
-    url:
+    date: 2024-06-01T00:00:00.000Z
+    subtext: Issued by the _University of Strasbourg_
+    url: null
     location: Strasbourg, France
     highlights:
-      - "Selected as one of 8 recipients out of 18 applicants for a 3-year fellowship (≈€81,000) to support personal PhD research"
-
-certificates:
-  # - name: "Learning How to Learn: Powerful mental tools to help you master tough subjects"
-  #   date: 2021-09-01
-  #   issuer: Coursera
-  #   url: https://example.com
-  #   id: "1MPR3CVR3SUM3"
-
+      - >-
+        Selected as one of 8 recipients out of 18 applicants for a 3-year
+        fellowship (≈€81,000) to support personal PhD research
+certificates: null
 publications:
   - name: Thealtres visualization application
-    type: "app"
-    authors: ["Doyen, Enzo", "Ruiz Fabo, Pablo"]
-    version: "1.0.0"
+    type: app
+    authors:
+      - Doyen, Enzo
+      - Ruiz Fabo, Pablo
+    version: 1.0.0
     year: 2024
-    doi: "10.5281/zenodo.10520031"
-
+    doi: 10.5281/zenodo.10520031
 talks:
   - name: Éviter les biais de genre dans les outils de TAL
     english: Avoiding Gender Biases in NLP Tools
-    authors: ["Doyen, Enzo"]
+    authors:
+      - Doyen, Enzo
     conference-intro: "Talk:"
     conference: "Séminaire LiRiC — Session 2 : inclusion et écriture"
-    location: "Strasbourg, France"
-    date: 2025-01-16
-    url: "https://www.edoyen.com/academia#talk-bias-nlp"
+    location: Strasbourg, France
+    date: 2025-01-16T00:00:00.000Z
+    url: https://www.edoyen.com/academia#talk-bias-nlp
   - name: Navigation structurée de métadonnées de théâtre
     english: Structured Navigation of Theater Metadata
-    authors: ["Doyen, Enzo", "Ruiz Fabo, Pablo"]
+    authors:
+      - Doyen, Enzo
+      - Ruiz Fabo, Pablo
     conference-intro: "Poster Session:"
-    conference: "Humanités numériques en pédagogie et en recherche 2"
-    location: "Strasbourg, France"
-    date: 2024-10-17
-    url: "https://www.edoyen.com/academia#poster-thealtres"
-
+    conference: "Humanités numériques en pédagogie et en recherche\_2"
+    location: Strasbourg, France
+    date: 2024-10-17T00:00:00.000Z
+    url: https://www.edoyen.com/academia#poster-thealtres
 schools:
-  # - name: "ALPS 2025"
-  #   url: "https://lig-alps.imag.fr/"
-  #   affiliation: "LIG / Naver Labs Europe / Cohere"
-  #   location: "Aussois, France"
-  #   date: 2025-05-01
-  #   highlights:
-  - name: "Lexicon Summer School"
-    url: "https://www.lexiconsummerschool.com/"
-    affiliation: "University of Granada"
-    location: "Almuñécar, Spain"
-    date: 2023-08-01
+  - name: Lexicon Summer School
+    url: https://www.lexiconsummerschool.com/
+    affiliation: University of Granada
+    location: Almuñécar, Spain
+    date: 2023-08-01T00:00:00.000Z
     highlights:
-      - Participated to a 30-hour program of seminars and workshops in terminology and artificial intelligence with global experts
-
+      - >-
+        Participated to a 30-hour program of seminars and workshops in
+        terminology and artificial intelligence with global experts
 teaching:
-  - name: "Web, corpus et traduction"
-    english: "Web, corpus and translation"
+  - name: Web, corpus et traduction
+    english: Web, corpus and translation
     fullresp: true
-    position: "Institut européen des métiers de la traduction (IEMT); University of Strasbourg"
-    semester: "2024 – 2025 \n (S1)"
-    level: "Master's \n (1st year)"
-  - name: "Conception de pages Web (HTML/CSS)"
-    english: "Introduction to HTML/CSS"
+    position: >-
+      Institut européen des métiers de la traduction (IEMT); University of
+      Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1)
+    level: |-
+      Master's 
+       (1st year)
+  - name: Conception de pages Web (HTML/CSS)
+    english: Introduction to HTML/CSS
     fullresp: true
-    position: "University of Strasbourg"
-    semester: "2024 – 2025 \n (S1, S2)"
-    level: "Bachelor's \n (2nd-3rd years)"
-  - name: "Linguistique de corpus"
-    english: "Corpus linguistics"
+    position: University of Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1, S2)
+    level: |-
+      Bachelor's 
+       (2nd-3rd years)
+  - name: Linguistique de corpus
+    english: Corpus linguistics
     fullresp: false
-    position: "University of Strasbourg"
-    semester: "2024 – 2025 \n (S1)"
-    level: "Master's \n (1st year)"
-  - name: "Analyse de corpus"
-    english: "Corpus analysis"
+    position: University of Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1)
+    level: |-
+      Master's 
+       (1st year)
+  - name: Analyse de corpus
+    english: Corpus analysis
     fullresp: false
-    position: "University of Strasbourg"
-    semester: "2024 – 2025 \n (S1)"
-    level: "Master's \n (2nd year)"
-
+    position: University of Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1)
+    level: |-
+      Master's 
+       (2nd year)
 projects:
-  - name: "touying-unistra-pristine"
+  - name: touying-unistra-pristine
     url: ""
-    github: "spidersouris/touying-unistra-pristine"
-    github-stars: 4
-    startDate: 2024-08-01
+    github: spidersouris/touying-unistra-pristine
+    github-stars: 5
+    startDate: 2024-08-01T00:00:00.000Z
     endDate: ""
     highlights:
-      - Created a custom presentation slides theme for the University of Strasbourg in Typst using Touying
-  - name: "termic"
+      - >-
+        Created a custom presentation slides theme for the University of
+        Strasbourg in Typst using Touying
+  - name: termic
     url: https://termic.me/
-    github: "spidersouris/termic"
+    github: spidersouris/termic
     github-stars: 21
     affiliation: Open University
-    startDate: 2023-05-01
+    startDate: 2023-05-01T00:00:00.000Z
     endDate: ""
     highlights:
-      - Designed and developed a full-stack web app replacement/alternative to Microsoft Terminology Search used by thousands of translators and terminologists around the world
-      - Developed open-source Python scripts to process and clean Microsoft-provided terminology files, and to extract terminologic data from VSCode
-
+      - >-
+        Designed and developed a full-stack web app replacement/alternative to
+        Microsoft Terminology Search used by thousands of translators and
+        terminologists around the world
+      - >-
+        Developed open-source Python scripts to process and clean
+        Microsoft-provided terminology files, and to extract terminologic data
+        from VSCode
 skills:
   - category: Programming
     skills:
@@ -260,7 +259,6 @@ skills:
       - time mangement
       - public speaking
       - technology trend awareness
-
 languages:
   - language: French
     fluency: native
@@ -270,16 +268,5 @@ languages:
     fluency: B2
   - language: Japanese
     fluency: A1
-
-interests:
-  # - Video Games
-  # - Anime
-  # - Reading Non-fiction
-  # - Classical and Original Soundtrack Music
-
-references:
-  # You can comment out the entries below if you don't have any references
-  # The same goes for the publications
-  # - name: Dr. Jane Austin
-  #   reference: John was a great student. He was always eager to learn new things and was very passionate about his studies. As his mentor, I am proud to say that he was also a great leader and was able to lead his team to victory in the 2020 SCG Bangkok Business Challenge Global Competition.
-  #   url: https://janeaustin.com
+interests: null
+references: null

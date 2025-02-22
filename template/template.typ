@@ -5,8 +5,8 @@
 #let uservars = (
   authorname: [Doyen, E.], // array; full last name, first initial; as shown in bibliography
   // used to highlight name in author lists
-  headingfont: "Libertinus Serif",
-  bodyfont: "Libertinus Serif",
+  headingfont: "Linux Libertine",
+  bodyfont: "Linux Libertine",
   fontsize: 10pt, // length
   linespacing: 6pt, // length
   sectionspacing: 0pt, // length
