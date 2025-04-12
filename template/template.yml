@@ -23,6 +23,10 @@ personal:
       username: Enzo Doyen
       url: https://orcid.org/0009-0005-4742-5860
       icon: orcid
+    # - network: Google Scholar
+    #   username: Enzo Doyen
+    #   url: https://scholar.google.com/citations?user=pGk01S8AAAAJ
+    #   icon: google-scholar
 work:
   - organization: University of Strasbourg
     url: https://unistra.fr/
@@ -103,6 +107,13 @@ awards:
         fellowship (≈€81,000) to support personal PhD research
 certificates: null
 publications:
+  - name: Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine Generics Bias
+    type: preprint
+    authors:
+      - Doyen, Enzo
+      - Todirascu, Amalia
+    year: 2025
+    doi: 10.48550/arXiv.2502.10577
   - name: Thealtres visualization application
     type: app
     authors:
@@ -110,8 +121,24 @@ publications:
       - Ruiz Fabo, Pablo
     version: 1.0.0
     year: 2024
-    doi: 10.5281/zenodo.10520031
+    doi: 10.5281/zenodo.11289443
+  - name: Neutralisation automatique du genre à travers l'utilisation de noms collectifs en français
+    type: thesis
+    authors:
+      - Doyen, Enzo
+    year: 2024
+    university: University of Strasbourg
+    url: https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf
 talks:
+  - name: Analyzing use of masculine generics by LLMs in French
+    english: null
+    authors:
+      - Doyen, Enzo
+    conference-intro: "Poster Session:"
+    conference: "ALPS 2025"
+    location: Aussois, France
+    date: 2025-04-02T00:00:00.000Z
+    url: https://www.edoyen.com/academia#poster-alps
   - name: Éviter les biais de genre dans les outils de TAL
     english: Avoiding Gender Biases in NLP Tools
     authors:
@@ -132,6 +159,15 @@ talks:
     date: 2024-10-17T00:00:00.000Z
     url: https://www.edoyen.com/academia#poster-thealtres
 schools:
+  - name: ALPS 2025
+    url: https://lig-alps.imag.fr/
+    affiliation: LIG (Univ. Grenoble Alpes) | Naver Labs Europe | Cohere
+    location: Aussois, France
+    date: 2025-04-01T00:00:00.000Z
+    highlights:
+      - >-
+        Participated to a 28-hour program comprised of lectures, project sessions
+        and poster sessions with world-class NLP researchers
   - name: Lexicon Summer School
     url: https://www.lexiconsummerschool.com/
     affiliation: University of Granada
@@ -236,6 +272,7 @@ skills:
       - spaCy
   - category: Web Development
     skills:
+      - Next.js
       - Astro
       - Tailwind CSS
       - Node.js

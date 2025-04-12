@@ -227,11 +227,7 @@
         // Create a block layout for each education entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Institution and Location
-          #if utils._is(edu.url) [
-            *#link(edu.url)[#edu.title]* #h(1fr) *#edu.location* \
-          ] else [
-            *#edu.title* #h(1fr) *#edu.location* \
-          ]
+          *#edu.title* #h(1fr) *#edu.location* \
           // Line 2: Degree and Date
           #if utils._is(edu.img) [
             #box(
@@ -535,6 +531,21 @@
     } else if pub.type == "poster" {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
         #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.conference]. #pub.location.
+        #if utils._is(pub.doi) {
+          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+        }
+      ]
+    } else if pub.type == "thesis" {
+      block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
+        #text(style: "italic")[#authors] (#pub.year). #pub.name. #pub.university. #if utils._is(pub.url) {
+          // don't show underline for this type of external link icon
+          show underline: it => it.body
+          link(pub.url)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)]
+        }
+      ]
+    } else if pub.type == "preprint" {
+      block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
+        #text(style: "italic")[#authors] (#pub.year). #pub.name.
         #if utils._is(pub.doi) {
           [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
         }
