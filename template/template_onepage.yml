@@ -1,0 +1,293 @@
+personal:
+  name: Enzo Doyen
+  email: contact@edoyen.com
+  institutional-email: enzo.doyen@unistra.fr
+  phone: undefined
+  url: https://edoyen.com
+  titles:
+    - PhD Candidate in Natural Language Processing
+  location:
+    city: Strasbourg
+    region: null
+    country: France
+  profiles:
+    - network: LinkedIn
+      username: Enzo Doyen
+      url: https://linkedin.com/in/enzo-doyen
+      icon: linkedin
+    - network: GitHub
+      username: spidersouris
+      url: https://github.com/spidersouris
+      icon: github
+    - network: ORCID
+      username: Enzo Doyen
+      url: https://orcid.org/0009-0005-4742-5860
+      icon: orcid
+    # - network: Google Scholar
+    #   username: Enzo Doyen
+    #   url: https://scholar.google.com/citations?user=pGk01S8AAAAJ
+    #   icon: google-scholar
+work:
+  - organization: University of Strasbourg
+    url: https://unistra.fr/
+    img: assets/unistra.svg
+    location: On-site / Strasbourg, France
+    positions:
+      - position: Adjunct Lecturer
+        startDate: 2024-09-01T00:00:00.000Z
+        endDate: present
+        highlights: null
+  - organization: University of Strasbourg, LilPa
+    url: https://lilpa.unistra.fr/
+    img: assets/lilpa_min.svg
+    location: Hybrid / Strasbourg, France
+    positions:
+      - position: Software Engineer Intern
+        startDate: 2024-02-01T00:00:00.000Z
+        endDate: 2024-04-01T00:00:00.000Z
+        highlights:
+          - >-
+            Engineered a web app (https://thealtres.pages.unistra.fr/vis/) for
+            the Thealtres project to visualize theater data, allowing users to
+            search, filter, sort, and analyze trends across ≈1,000 plays and
+            10,000+ characters
+          - Conceptualized and executed intuitive and appealing UI/UX design
+          - Created customized, interactive data visualizations using D3.js
+          - Created a custom Leaflet map leveraging the data
+education:
+  - title: PhD in Natural Language Processing
+    institution: University of Strasbourg, LiLPa
+    url: https://lilpa.unistra.fr/
+    img: assets/lilpa_min.svg
+    startDate: 2024-10-01T00:00:00.000Z
+    endDate: 2027-10-01T00:00:00.000Z
+    location: Strasbourg, France
+    honors: null
+    courses: null
+    highlights:
+      - "*Thesis*: Mitigating Gender Biases in NLP Data for French"
+      - "*Supervisor*: Amalia Todirascu"
+  - title: Master's in Natural Language Processing
+    institution: University of Strasbourg
+    url: https://www.unistra.fr/
+    img: assets/unistra.svg
+    startDate: 2022-09-01T00:00:00.000Z
+    endDate: 2024-06-01T00:00:00.000Z
+    location: Strasbourg, France
+    honors: null
+    courses: null
+    highlights:
+      - "*Grade*: 18.125/20 (GPA equiv.: 4.0). Highest Honors. Rank: 1/20."
+affiliations: null
+awards:
+  - title: Doctoral Fellowship
+    date: 2024-06-01T00:00:00.000Z
+    subtext: Issued by the _University of Strasbourg_
+    url: null
+    location: Strasbourg, France
+    highlights:
+      - >-
+        Selected as one of 8 recipients out of 18 applicants for a 3-year
+        fellowship (≈€81,000) to support personal PhD research
+certificates: null
+publications:
+  - name: Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine Generics Bias
+    type: preprint
+    authors:
+      - Doyen, Enzo
+      - Todirascu, Amalia
+    year: 2025
+    doi: 10.48550/arXiv.2502.10577
+  - name: Thealtres visualization application
+    type: app
+    authors:
+      - Doyen, Enzo
+      - Ruiz Fabo, Pablo
+    version: 1.0.0
+    year: 2024
+    doi: 10.5281/zenodo.11289443
+  - name: Neutralisation automatique du genre à travers l'utilisation de noms collectifs en français
+    type: thesis
+    authors:
+      - Doyen, Enzo
+    year: 2024
+    university: University of Strasbourg
+    url: https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf
+talks:
+  - name: Analyzing use of masculine generics by LLMs in French
+    english: null
+    authors:
+      - Doyen, Enzo
+    conference-intro: "Poster Session:"
+    conference: "ALPS 2025"
+    location: Aussois, France
+    date: 2025-04-02T00:00:00.000Z
+    url: https://www.edoyen.com/academia#poster-alps
+  - name: Éviter les biais de genre dans les outils de TAL
+    english: Avoiding Gender Biases in NLP Tools
+    authors:
+      - Doyen, Enzo
+    conference-intro: "Talk:"
+    conference: "Séminaire LiRiC — Session 2 : inclusion et écriture"
+    location: Strasbourg, France
+    date: 2025-01-16T00:00:00.000Z
+    url: https://www.edoyen.com/academia#talk-bias-nlp
+  - name: Navigation structurée de métadonnées de théâtre
+    english: Structured Navigation of Theater Metadata
+    authors:
+      - Doyen, Enzo
+      - Ruiz Fabo, Pablo
+    conference-intro: "Poster Session:"
+    conference: "Humanités numériques en pédagogie et en recherche\_2"
+    location: Strasbourg, France
+    date: 2024-10-17T00:00:00.000Z
+    url: https://www.edoyen.com/academia#poster-thealtres
+schools:
+  - name: ALPS 2025
+    url: https://lig-alps.imag.fr/
+    affiliation: LIG (Univ. Grenoble Alpes) | Naver Labs Europe | Cohere
+    location: Aussois, France
+    date: 2025-04-01T00:00:00.000Z
+    highlights:
+      - >-
+        Participated to a 28-hour program comprised of lectures, project sessions
+        and poster sessions with world-class NLP researchers
+  - name: Lexicon Summer School
+    url: https://www.lexiconsummerschool.com/
+    affiliation: University of Granada
+    location: Almuñécar, Spain
+    date: 2023-08-01T00:00:00.000Z
+    highlights:
+      - >-
+        Participated to a 30-hour program of seminars and workshops in
+        terminology and artificial intelligence with global experts
+teaching:
+  - name: Web, corpus et traduction
+    english: Web, corpus and translation
+    fullresp: true
+    position: >-
+      Institut européen des métiers de la traduction (IEMT); University of
+      Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1)
+    level: |-
+      Master's 
+       (1st year)
+  - name: Conception de pages Web (HTML/CSS)
+    english: Introduction to HTML/CSS
+    fullresp: true
+    position: University of Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1, S2)
+    level: |-
+      Bachelor's 
+       (2nd-3rd years)
+  - name: Linguistique de corpus
+    english: Corpus linguistics
+    fullresp: false
+    position: University of Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1)
+    level: |-
+      Master's 
+       (1st year)
+  - name: Analyse de corpus
+    english: Corpus analysis
+    fullresp: false
+    position: University of Strasbourg
+    semester: |-
+      2024 – 2025 
+       (S1)
+    level: |-
+      Master's 
+       (2nd year)
+projects:
+  - name: touying-unistra-pristine
+    url: ""
+    github: spidersouris/touying-unistra-pristine
+    github-stars: 5
+    startDate: 2024-08-01T00:00:00.000Z
+    endDate: ""
+    highlights:
+      - >-
+        Created a custom presentation slides theme for the University of
+        Strasbourg in Typst using Touying
+  - name: termic
+    url: https://termic.me/
+    github: spidersouris/termic
+    github-stars: 21
+    affiliation: Open University
+    startDate: 2023-05-01T00:00:00.000Z
+    endDate: ""
+    highlights:
+      - >-
+        Designed and developed a full-stack web app replacement/alternative to
+        Microsoft Terminology Search used by thousands of translators and
+        terminologists around the world
+      - >-
+        Developed open-source Python scripts to process and clean
+        Microsoft-provided terminology files, and to extract terminologic data
+        from VSCode
+skills:
+  - category: Programming
+    skills:
+      - Python
+      - TypeScript/JavaScript
+      - SQL (Postgres)
+      - R
+      - RegExp
+      - LaTeX
+      - Typst
+  - category: AI/ML/DS/NLP
+    skills:
+      - PyTorch
+      - scikit-learn
+      - Keras
+      - Pandas
+      - NumPy
+      - Matplotlib
+      - seaborn
+      - BeautifulSoup
+      - Selenium
+      - NLTK
+      - spaCy
+  - category: Web Development
+    skills:
+      - Next.js
+      - Astro
+      - Tailwind CSS
+      - Node.js
+      - Flask
+      - Hugo
+  - category: Tools
+    skills:
+      - Git/GitHub
+      - Docker
+      - Microsoft Azure
+      - VSCode
+      - Jupyter Notebook
+  - category: Soft Skills
+    skills:
+      - Teamwork
+      - team management
+      - project management
+      - problem solving
+      - critical thinking
+      - adaptability
+      - time mangement
+      - public speaking
+      - technology trend awareness
+languages:
+  - language: French
+    fluency: native
+  - language: English
+    fluency: C2
+  - language: Spanish
+    fluency: B2
+  - language: Japanese
+    fluency: A1
+interests: null
+references: null
