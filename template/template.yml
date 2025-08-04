@@ -23,20 +23,17 @@ personal:
       username: Enzo Doyen
       url: https://orcid.org/0009-0005-4742-5860
       icon: orcid
-    # - network: Google Scholar
-    #   username: Enzo Doyen
-    #   url: https://scholar.google.com/citations?user=pGk01S8AAAAJ
-    #   icon: google-scholar
 work:
   - organization: University of Strasbourg
     url: https://unistra.fr/
     img: assets/unistra.svg
     location: On-site / Strasbourg, France
     positions:
-      - position: Teaching Assistant
+      - position: Adjunct Lecturer
         startDate: 2024-09-01T00:00:00.000Z
         endDate: present
-        highlights: null
+        highlights:
+          - Designing and delivering lectures and practical sessions, developing course materials, and assessing student performance for undergraduate and graduate courses in CS and NLP.
   - organization: University of Strasbourg, LilPa
     url: https://lilpa.unistra.fr/
     img: assets/lilpa_min.svg
@@ -94,6 +91,17 @@ education:
       - >-
         *Thesis*: Automatic Gender-Neutral Rewriting Using Human Collective
         Nouns in French
+  - title: B.A. in English Studies
+    institution: Aix-Marseille University
+    url: https://www.univ-amu.fr/
+    img: assets/amu.png
+    startDate: 2019-09-01T00:00:00.000Z
+    endDate: 2022-06-01T00:00:00.000Z
+    location: Aix-en-Provence, France
+    honors: null
+    courses: null
+    highlights:
+      - "*Grade*: 16.058/20 (GPA equiv.: 4.0). Highest Honors. Rank: 1/132."
 affiliations: null
 awards:
   - title: Doctoral Fellowship
@@ -107,7 +115,20 @@ awards:
         fellowship (≈€81,000) to support personal PhD research
 certificates: null
 publications:
-  - name: Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine Generics Bias
+  - name: "GeNRe: A French Gender-Neutral Rewriting System Using Collective Nouns"
+    type: conference
+    authors:
+      - Doyen, Enzo
+      - Todirascu, Amalia
+    year: 2025
+    conference: >-
+      Findings of the 63rd Annual Meeting of the Association for Computational
+      Linguistics
+    location: Vienna, Austria
+    doi: null
+  - name: >-
+      Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine
+      Generics Bias
     type: preprint
     authors:
       - Doyen, Enzo
@@ -122,20 +143,23 @@ publications:
     version: 1.0.0
     year: 2024
     doi: 10.5281/zenodo.11289443
-  - name: Neutralisation automatique du genre à travers l'utilisation de noms collectifs en français
+  - name: >-
+      Neutralisation automatique du genre à travers l'utilisation de noms
+      collectifs en français
     type: thesis
     authors:
       - Doyen, Enzo
     year: 2024
     university: University of Strasbourg
-    url: https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf
+    url: >-
+      https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf
 talks:
   - name: Analyzing use of masculine generics by LLMs in French
     english: null
     authors:
       - Doyen, Enzo
     conference-intro: "Poster Session:"
-    conference: "ALPS 2025"
+    conference: ALPS 2025
     location: Aussois, France
     date: 2025-04-02T00:00:00.000Z
     url: https://www.edoyen.com/academia#poster-alps
@@ -160,14 +184,14 @@ talks:
     url: https://www.edoyen.com/academia#poster-thealtres
 schools:
   - name: ALPS 2025
-    url: https://lig-alps.imag.fr/
-    affiliation: LIG (Univ. Grenoble Alpes) | Naver Labs Europe | Cohere
+    url: http://alps-2025.imag.fr/
+    affiliation: "LIG (Univ. Grenoble Alpes)\_|\_Naver Labs Europe\_|\_Cohere"
     location: Aussois, France
     date: 2025-04-01T00:00:00.000Z
     highlights:
       - >-
-        Participated to a 28-hour program comprised of lectures, project sessions
-        and poster sessions with world-class NLP researchers
+        Participated to a 28-hour program comprised of lectures, project
+        sessions and poster sessions with world-class NLP researchers
   - name: Lexicon Summer School
     url: https://www.lexiconsummerschool.com/
     affiliation: University of Granada
@@ -177,16 +201,41 @@ schools:
       - >-
         Participated to a 30-hour program of seminars and workshops in
         terminology and artificial intelligence with global experts
+volunteering:
+  - title: ACL 2025
+    location: Vienna, Austria
+    url: https://2025.aclweb.org/
+    highlights:
+      - >-
+        Provided a warm welcome to attendees and ensured a smooth and quick registration process
+      - Guided attendees to their sessions, dealt with crowd management and provided assistance and guidance as needed
 teaching:
+  - name: Traduction automatique
+    english: Machine Translation
+    fullresp: true
+    position: University of Strasbourg
+    semester: |-
+      2025
+    level: |-
+      Master's 
+       (2nd year)
+  - name: Recherche d'information
+    english: Information Retrieval
+    fullresp: true
+    position: University of Strasbourg
+    semester: |-
+      2025
+    level: |-
+      Master's 
+       (2nd year)
   - name: Web, corpus et traduction
-    english: Web, corpus and translation
+    english: Web, corpora and translation
     fullresp: true
     position: >-
       Institut européen des métiers de la traduction (IEMT); University of
       Strasbourg
     semester: |-
-      2024 – 2025 
-       (S1)
+      2024 – 2025
     level: |-
       Master's 
        (1st year)
@@ -195,8 +244,7 @@ teaching:
     fullresp: true
     position: University of Strasbourg
     semester: |-
-      2024 – 2025 
-       (S1, S2)
+      2024 – 2025
     level: |-
       Bachelor's 
        (2nd-3rd years)
@@ -205,8 +253,7 @@ teaching:
     fullresp: false
     position: University of Strasbourg
     semester: |-
-      2024 – 2025 
-       (S1)
+      2024
     level: |-
       Master's 
        (1st year)
@@ -215,8 +262,7 @@ teaching:
     fullresp: false
     position: University of Strasbourg
     semester: |-
-      2024 – 2025 
-       (S1)
+      2024
     level: |-
       Master's 
        (2nd year)
@@ -224,7 +270,7 @@ projects:
   - name: touying-unistra-pristine
     url: ""
     github: spidersouris/touying-unistra-pristine
-    github-stars: 5
+    github-stars: 12
     startDate: 2024-08-01T00:00:00.000Z
     endDate: ""
     highlights:
@@ -283,7 +329,6 @@ skills:
       - Git/GitHub
       - Docker
       - Microsoft Azure
-      - VSCode
       - Jupyter Notebook
   - category: Soft Skills
     skills:

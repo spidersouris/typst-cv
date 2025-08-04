@@ -5,8 +5,8 @@
 #let uservars = (
   authorname: [Doyen, E.], // array; full last name, first initial; as shown in bibliography
   // used to highlight name in author lists
-  headingfont: "Linux Libertine",
-  bodyfont: "Linux Libertine",
+  headingfont: "Libertinus Serif",
+  bodyfont: "Libertinus Serif",
   fontsize: 10pt, // length
   linespacing: 6pt, // length
   sectionspacing: 0pt, // length
@@ -26,13 +26,20 @@
 //      doc
 // }
 
+#let footertext = {
+  context [
+    #align(
+      center,
+      if counter(page).get() != (1,) { text(size: 0.93em, fill: luma(30%))[Enzo Doyen] } else { h(4.65em) } + h(1fr) + counter(page).display("1 / 1", both: true) + h(1fr) + text(size: 0.93em, fill: luma(30%))[Last updated: #datetime.today().display()],
+    ),
+  ]
+}
+
 #let customrules(doc) = {
-  // add custom document style rules here
   set page(
     paper: "us-letter",
-    numbering: "1 / 1",
-    number-align: center,
     margin: 1.25cm,
+    footer: footertext,
   )
 
   set list(indent: 1em) // indent bullet list for legibility
@@ -63,5 +70,6 @@
 #cvtalks(cvdata, uservars)
 #cvawards(cvdata)
 #cvschools(cvdata, uservars)
+#cvvolunteering(cvdata, uservars)
 #cvteaching(cvdata)
 #cvskills(cvdata)
