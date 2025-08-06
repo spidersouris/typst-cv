@@ -125,7 +125,7 @@ publications:
       Findings of the 63rd Annual Meeting of the Association for Computational
       Linguistics
     location: Vienna, Austria
-    doi: null
+    doi: 10.18653/v1/2025.findings-acl.411
   - name: >-
       Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine
       Generics Bias
