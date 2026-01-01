@@ -71,5 +71,6 @@
 #cvawards(cvdata)
 #cvschools(cvdata, uservars)
 #cvvolunteering(cvdata, uservars)
+#cvreviewing(cvdata)
 #cvteaching(cvdata)
 #cvskills(cvdata)

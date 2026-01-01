@@ -4,8 +4,7 @@ personal:
   institutional-email: enzo.doyen@unistra.fr
   phone: undefined
   url: https://edoyen.com
-  titles:
-    - PhD Candidate in Natural Language Processing
+  titles: PhD Candidate in Natural Language Processing
   location:
     city: Strasbourg
     region: null
@@ -49,18 +48,17 @@ work:
             search, filter, sort, and analyze trends across ≈1,000 plays and
             10,000+ characters
           - Conceptualized and executed intuitive and appealing UI/UX design
-          - Created customized, interactive data visualizations using D3.js
-          - Created a custom Leaflet map leveraging the data
+          - Created customized, interactive data visualizations using D3.js and Leaflet
   - organization: Valve Corporation
     url: https://www.valvesoftware.com/en/
     img: assets/valve.svg
-    location: Remote / Seattle, USA
+    location: Remote / Seattle, WA, USA
     positions:
       - position: Bilingual Localizer (EN → FR)
         startDate: 2017-11-01T00:00:00.000Z
         endDate: present
         highlights:
-          - "Translating Steam, the world's biggest video game digital distribution service (≈132 million monthly active users (MAU)); ≈3\_million French MAUs) and major video games and hardware (Counter-Strike 2, Dota 2, Deadlock; Steam Deck, Valve Index)."
+          - "Translating Steam, the world's biggest video game digital distribution service (≈132 million monthly active users (MAU)); ≈3\_million French MAUs) and major video games and hardware (Counter-Strike 2, Dota 2, Deadlock; Steam Deck/Frame/Machine)."
 education:
   - title: PhD in Natural Language Processing
     institution: University of Strasbourg, LiLPa
@@ -115,6 +113,16 @@ awards:
         fellowship (≈€81,000) to support personal PhD research
 certificates: null
 publications:
+  # - name: "Cohésion textuelle dans les textes générés par les SLM : expressions référentielles et genre"
+  #   type: conference
+  #   authors:
+  #     - Todirascu, Amalia
+  #     - Doyen, Enzo
+  #   year: 2025
+  #   conference: >-
+  #     Congrès Orbicom - GTnum - ITI LiRiC CIAREI
+  #   location: Strasbourg, France
+  #   doi: null
   - name: "GeNRe: A French Gender-Neutral Rewriting System Using Collective Nouns"
     type: conference
     authors:
@@ -146,7 +154,7 @@ publications:
   - name: >-
       Neutralisation automatique du genre à travers l'utilisation de noms
       collectifs en français
-    type: thesis
+    type: masters
     authors:
       - Doyen, Enzo
     year: 2024
@@ -217,7 +225,7 @@ teaching:
     semester: |-
       2025
     level: |-
-      Master's 
+      Master's
        (2nd year)
   - name: Recherche d'information
     english: Information Retrieval
@@ -226,7 +234,7 @@ teaching:
     semester: |-
       2025
     level: |-
-      Master's 
+      Master's
        (2nd year)
   - name: Web, corpus et traduction
     english: Web, corpora and translation
@@ -237,17 +245,26 @@ teaching:
     semester: |-
       2024 – 2025
     level: |-
-      Master's 
+      Master's
        (1st year)
   - name: Conception de pages Web (HTML/CSS)
     english: Introduction to HTML/CSS
     fullresp: true
     position: University of Strasbourg
     semester: |-
-      2024 – 2025
+      2024 – 2026
     level: |-
-      Bachelor's 
+      Bachelor's
        (2nd-3rd years)
+  - name: Projet tutoré interdisciplinaire
+    english: Interdisciplinary supervised project
+    fullresp: false
+    position: University of Strasbourg
+    semester: |-
+      2025
+    level: |-
+      Master's
+       (2nd year)
   - name: Linguistique de corpus
     english: Corpus linguistics
     fullresp: false
@@ -255,7 +272,7 @@ teaching:
     semester: |-
       2024
     level: |-
-      Master's 
+      Master's
        (1st year)
   - name: Analyse de corpus
     english: Corpus analysis
@@ -264,13 +281,17 @@ teaching:
     semester: |-
       2024
     level: |-
-      Master's 
+      Master's
        (2nd year)
+reviewing:
+  - name: Transactions on Asian and Low-Resource Language Information Processing
+    publisher: ACM
+    dates: "2025 - 2026"
 projects:
   - name: touying-unistra-pristine
     url: ""
     github: spidersouris/touying-unistra-pristine
-    github-stars: 12
+    github-stars: 14
     startDate: 2024-08-01T00:00:00.000Z
     endDate: ""
     highlights:
@@ -281,7 +302,6 @@ projects:
     url: https://termic.me/
     github: spidersouris/termic
     github-stars: 21
-    affiliation: Open University
     startDate: 2023-05-01T00:00:00.000Z
     endDate: ""
     highlights:
@@ -289,10 +309,10 @@ projects:
         Designed and developed a full-stack web app replacement/alternative to
         Microsoft Terminology Search used by thousands of translators and
         terminologists around the world
-      - >-
-        Developed open-source Python scripts to process and clean
-        Microsoft-provided terminology files, and to extract terminologic data
-        from VSCode
+      # - >-
+      #   Developed open-source Python scripts to process and clean
+      #   Microsoft-provided terminology files, and to extract terminologic data
+      #   from VSCode
 skills:
   - category: Programming
     skills:

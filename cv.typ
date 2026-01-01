@@ -64,7 +64,7 @@
 #let jobtitletext(info, uservars) = {
   if uservars.showTitle {
     block(width: 100%)[
-      *#info.personal.titles.join("  /  ")*
+      *#info.personal.titles*
       #v(-4pt)
     ]
   } else {
@@ -123,8 +123,8 @@
         fa-icon("globe")
           + " "
           + link(info.personal.url)[#(
-              info.personal.url.split("//").at(1)
-            )],
+            info.personal.url.split("//").at(1)
+          )],
       )
     },
   ).filter(it => it != none) // Filter out none elements from the profile array
@@ -136,8 +136,8 @@
           fa-icon(profile.icon)
             + " "
             + link(profile.url)[#(
-                profile.url.split("//").at(1)
-              )],
+              profile.url.split("//").at(1)
+            )],
         ),
       )
     }
@@ -325,18 +325,18 @@
       utils._is(project.url) and utils._is(project.github)
     ) [
       *#project.name | #link(project.url) | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none {
-        box(
-          image(uservars.githubStarIcon),
-          height: 7pt,
-        ) + " " + str(project.github-stars)
-      }* #h(1fr) #utils.daterange(start, end)
+          box(
+            image(uservars.githubStarIcon),
+            height: 7pt,
+          ) + " " + str(project.github-stars)
+        }* #h(1fr) #utils.daterange(start, end)
     ] else if utils._is(project.github) [
       *#project.name | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none {
-        box(
-          image(uservars.githubStarIcon),
-          height: 7pt,
-        ) + " " + str(project.github-stars)
-      }* #h(1fr) #utils.daterange(start, end)
+          box(
+            image(uservars.githubStarIcon),
+            height: 7pt,
+          ) + " " + str(project.github-stars)
+        }* #h(1fr) #utils.daterange(start, end)
     ] else if utils._is(project.url) [
       *#link(project.url)[#project.name | #link(project.url)]* #h(1fr) #utils.daterange(
         start,
@@ -545,6 +545,35 @@
   }
 }
 
+#let cvreviewing(
+  info,
+  title: "Reviewing Activities",
+  isbreakable: true,
+) = {
+  if utils._is(info.reviewing) {
+    v(-0.1em)
+    block(breakable: isbreakable)[
+      == #title
+      #figure(supplement: none, gap: 0em, table(
+        columns: (1fr, 1fr, 1fr),
+        stroke: none,
+        align: center,
+        table.header([Journal], [Publisher], [Dates]),
+        table.hline(),
+        ..for (name, publisher, dates) in (
+          info.reviewing
+        ) {
+          (
+            name,
+            publisher,
+            dates,
+          )
+        },
+      )) <reviewing>
+    ]
+  }
+}
+
 #let cvpublications(
   info,
   uservars,
@@ -568,9 +597,9 @@
           [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
         }
       ]
-    } else if pub.type == "thesis" {
+    } else if pub.type == "masters" {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-        #text(style: "italic")[#authors] (#pub.year). #pub.name. #pub.university. #if utils._is(pub.url) {
+        #text(style: "italic")[#authors] (#pub.year). #pub.name. Master's thesis. #pub.university. #if utils._is(pub.url) {
           // don't show underline for this type of external link icon
           show underline: it => it.body
           link(pub.url)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)]
