@@ -25,5 +25,5 @@ jobs:
           cp template/template.pdf spidersouris.github.io/public/edoyen_resume.pdf
           cd spidersouris.github.io
           git add public/edoyen_resume.pdf
-          git commit -m "🍱 chore(auto): update resume from typst-cv repo"
+          git commit -m "🍱 chore(auto): update resume from typst-cv repo" --allow-empty
           git push
