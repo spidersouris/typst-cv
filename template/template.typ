@@ -71,6 +71,7 @@
 #cvawards(cvdata)
 #cvschools(cvdata, uservars)
 #cvvolunteering(cvdata, uservars)
-#cvreviewing(cvdata)
+//#cvreviewing(cvdata) //! temporarily switch teaching and reviewing to avoid large blank space on p. 2; undo when more content
 #cvteaching(cvdata)
+#cvreviewing(cvdata)
 #cvskills(cvdata)

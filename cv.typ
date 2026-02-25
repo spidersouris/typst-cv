@@ -325,18 +325,18 @@
       utils._is(project.url) and utils._is(project.github)
     ) [
       *#project.name | #link(project.url) | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none {
-          box(
-            image(uservars.githubStarIcon),
-            height: 7pt,
-          ) + " " + str(project.github-stars)
-        }* #h(1fr) #utils.daterange(start, end)
+        box(
+          image(uservars.githubStarIcon),
+          height: 7pt,
+        ) + " " + str(project.github-stars)
+      }* #h(1fr) #utils.daterange(start, end)
     ] else if utils._is(project.github) [
       *#project.name | #fa-icon("github") #link("https://github.com/" + project.github)[#project.github] #if project.github-stars != none {
-          box(
-            image(uservars.githubStarIcon),
-            height: 7pt,
-          ) + " " + str(project.github-stars)
-        }* #h(1fr) #utils.daterange(start, end)
+        box(
+          image(uservars.githubStarIcon),
+          height: 7pt,
+        ) + " " + str(project.github-stars)
+      }* #h(1fr) #utils.daterange(start, end)
     ] else if utils._is(project.url) [
       *#link(project.url)[#project.name | #link(project.url)]* #h(1fr) #utils.daterange(
         start,
@@ -513,7 +513,7 @@
   info,
   title: "Teaching Responsibilities",
   engparenthesis: false,
-  isbreakable: true,
+  isbreakable: false,
 ) = {
   if utils._is(info.teaching) {
     block(breakable: isbreakable)[

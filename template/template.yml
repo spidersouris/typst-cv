@@ -113,16 +113,6 @@ awards:
         fellowship (≈€81,000) to support personal PhD research
 certificates: null
 publications:
-  # - name: "Cohésion textuelle dans les textes générés par les SLM : expressions référentielles et genre"
-  #   type: conference
-  #   authors:
-  #     - Todirascu, Amalia
-  #     - Doyen, Enzo
-  #   year: 2025
-  #   conference: >-
-  #     Congrès Orbicom - GTnum - ITI LiRiC CIAREI
-  #   location: Strasbourg, France
-  #   doi: null
   - name: "GeNRe: A French Gender-Neutral Rewriting System Using Collective Nouns"
     type: conference
     authors:
@@ -162,6 +152,16 @@ publications:
     url: >-
       https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf
 talks:
+  - name: "Textual Cohesion in SLM-Generated Texts: Referential Expressions and Gender"
+    english: null
+    authors:
+      - Todirascu, Amalia
+      - Doyen, Enzo
+    conference-intro: "Talk:"
+    conference: Orbicom CIAREI 2025
+    location: Strasbourg, France
+    date: 2025-09-29T00:00:00.000Z
+    url: https://orbicom-2025.sciencesconf.org/?lang=en
   - name: Analyzing use of masculine generics by LLMs in French
     english: null
     authors:
