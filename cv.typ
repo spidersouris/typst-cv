@@ -1,5 +1,5 @@
 #import "utils.typ"
-#import "@preview/fontawesome:0.5.0": *
+#import "@preview/fontawesome:0.6.0": *
 #import "@preview/use-academicons:0.1.0": *
 
 // set rules
@@ -148,18 +148,44 @@
     weight: "medium",
     size: uservars.fontsize * 1,
   )
-  #pad(x: 6em)[
+
+  #pad(x: if uservars.at("showPhoto", default: false) { 0em } else { 6em })[
     #profiles.join([#sym.space.en])
   ]
 ]
 
+#let cvphoto(info, uservars) = {
+  let path = info.personal.at("photo", default: none)
+  if not uservars.at("showPhoto", default: false) or not utils._is(path) {
+    return none
+  }
+  let size = uservars.at("photoSize", default: 3cm)
+  box(
+    clip: true,
+    radius: uservars.at("photoRadius", default: 2pt),
+    image(path, width: size, height: size, fit: "cover"),
+  )
+}
+
 #let cvheading(info, uservars) = {
-  align(center)[
+  let photo = cvphoto(info, uservars)
+  let head = align(center)[
     = #info.personal.name
     #jobtitletext(info, uservars)
     #addresstext(info, uservars)
     #contacttext(info, uservars)
   ]
+
+  if photo == none {
+    head
+  } else {
+    grid(
+      columns: (1fr, auto),
+      column-gutter: 1.5em,
+      align: (horizon, top),
+      head, photo,
+    )
+  }
 }
 
 #let cvwork(info, title: "Work Experience", isbreakable: true) = {
@@ -235,7 +261,7 @@
   }
 }
 
-#let cveducation(info, title: "Education", isbreakable: true) = {
+#let cveducation(info, uservars, title: "Education", isbreakable: true) = {
   if info.education != none {
     block(breakable: isbreakable)[
       == #title
@@ -254,8 +280,22 @@
           )
         }
         if utils._is(edu.highlights) {
+          // non-greedy so multiple [link](...) in one line don't overmatch
+          let link-ptn = regex("\[link\]\((.+?)\)")
           for hi in edu.highlights {
-            edu-items = edu-items + "- " + hi + "\n"
+            let processed = hi.replace(link-ptn, m => {
+              let url = m
+                .captures
+                .at(0)
+                .replace("\\", "\\\\")
+                .replace("\"", "\\\"")
+              (
+                "#link(\""
+                  + url
+                  + "\")[#fa-icon(\"external-link\", size: uservars.fontsize * 0.8)]"
+              )
+            })
+            edu-items = edu-items + "- " + processed + "\n"
           }
           edu-items = edu-items.trim("\n")
         }
@@ -273,7 +313,10 @@
           ]
           #link(edu.url)[#text(style: "italic")[#edu.institution]] #h(1fr)
           #utils.daterange(start, end) \
-          #eval(edu-items, mode: "markup")
+          #eval(edu-items, mode: "markup", scope: (
+            uservars: uservars,
+            fa-icon: fa-icon,
+          ))
         ]
       }
     ]
@@ -453,12 +496,14 @@
           talk.authors,
           talk.authors.len(),
           uservars.authorname,
+          false,
+          none,
         )
 
         // Create a block layout for each talk entry
         block(width: 100%, breakable: isbreakable)[
           // Line 1: Talk Title and Location
-          *#talk.name*
+          *#eval(talk.name, mode: "markup")*
           #if utils._is(talk.english) {
             text(style: "italic", [(#talk.english)])
           } #h(1fr) *#talk.location* \
@@ -527,7 +572,7 @@
           info.teaching
         ) {
           (
-            if fullresp { sym.penta.stroked } else { sym.circle.nested }
+            if fullresp { sym.penta.stroked } else { sym.dot.o }
               + " "
               + if engparenthesis {
                 name + linebreak() + text(style: "italic")[(#english)]
@@ -540,7 +585,7 @@
       )) <teaching>
       #align(
         right,
-      )[#sym.penta.stroked Full responsibility | #sym.circle.nested Partial responsibility]
+      )[#sym.penta.stroked Full responsibility | #sym.dot.o Partial responsibility]
     ]
   }
 }
@@ -549,23 +594,28 @@
   info,
   title: "Reviewing Activities",
   isbreakable: true,
+  uservars,
 ) = {
   if utils._is(info.reviewing) {
     v(-0.1em)
     block(breakable: isbreakable)[
       == #title
       #figure(supplement: none, gap: 0em, table(
-        columns: (1fr, 1fr, 1fr),
+        columns: (4fr, 1fr, 1fr, 1fr),
         stroke: none,
         align: center,
-        table.header([Journal], [Publisher], [Dates]),
+        table.header([Name], [Publisher], [Type], [Dates]),
         table.hline(),
-        ..for (name, publisher, dates) in (
+        ..for (name, publisher, type, dates, best, best-link) in (
           info.reviewing
         ) {
           (
-            name,
+            name
+              + if (best) {
+                [ *[#text(fa-icon("award", solid: false), size: 7pt) Best Reviewer Award#if utils._is(best-link) { link(best-link)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)] }]*]
+              },
             publisher,
+            type,
             dates,
           )
         },
@@ -582,24 +632,24 @@
 ) = {
   show link: underline
 
-  let create_publication = (pub, authors) => {
+  let create_publication = (i, pub, authors) => {
     if pub.type == "app" {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-        #text(style: "italic")[#authors] (#pub.year). #pub.name (v#pub.version).
-        #if utils._is(pub.doi) {
-          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+        [#i] #text(style: "italic")[#authors] (#pub.year). #pub.name (v#pub.version).
+        #if utils._is(pub.doi) and pub.doi != "TODO" {
+          [#ai-icon("doi") #link("https://doi.org/" + pub.doi)[#pub.doi]]
         }
       ]
     } else if pub.type == "poster" or pub.type == "conference" {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-        #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.conference]. #pub.location.
-        #if utils._is(pub.doi) {
-          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+        [#i] #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.conference]. #pub.location.
+        #if utils._is(pub.doi) and pub.doi != "TODO" {
+          [#ai-icon("doi") #link("https://doi.org/" + pub.doi)[#pub.doi]]
         }
       ]
     } else if pub.type == "masters" {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-        #text(style: "italic")[#authors] (#pub.year). #pub.name. Master's thesis. #pub.university. #if utils._is(pub.url) {
+        [#i] #text(style: "italic")[#authors] (#pub.year). #pub.name. Master's thesis. #pub.university. #if utils._is(pub.url) {
           // don't show underline for this type of external link icon
           show underline: it => it.body
           link(pub.url)[ #fa-icon("external-link", size: uservars.fontsize * 0.8)]
@@ -607,16 +657,16 @@
       ]
     } else if pub.type == "preprint" {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-        #text(style: "italic")[#authors] (#pub.year). #pub.name.
+        [#i] #text(style: "italic")[#authors] (#pub.year). #pub.name.
         #if utils._is(pub.doi) {
-          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+          [#ai-icon("doi") #link("https://doi.org/" + pub.doi)[#pub.doi]]
         }
       ]
     } else {
       block(width: 100%, breakable: isbreakable, spacing: 0.6em)[
-        #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.journal]. #pub.volume. #pub.pages.
+        [#i] #text(style: "italic")[#authors] (#pub.year). #pub.name. #text(style: "italic")[#pub.journal]. #pub.volume. #pub.pages.
         #if utils._is(pub.doi) {
-          [#ai-icon("depsy") #link("https://doi.org/" + pub.doi)[#pub.doi]]
+          [#ai-icon("doi") #link("https://doi.org/" + pub.doi)[#pub.doi]]
         }
       ]
     }
@@ -626,14 +676,17 @@
     block(breakable: isbreakable)[
       == #title
 
-      #for pub in info.publications {
+      #for (i, pub) in info.publications.enumerate(start: 1) {
+        let ri = info.publications.len() + 1 - i
         let authors = utils.format-authors(
           pub.authors,
           pub.authors.len(),
           uservars.authorname,
+          if "skip-authors" in pub { true } else { false },
+          if "skip-authors" in pub { pub.last-authors } else { none },
         )
 
-        create_publication(pub, authors)
+        create_publication(ri, pub, authors)
       }
     ]
   }

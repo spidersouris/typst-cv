@@ -32,7 +32,10 @@ work:
         startDate: 2024-09-01T00:00:00.000Z
         endDate: present
         highlights:
-          - Designing and delivering lectures and practical sessions, developing course materials, and assessing student performance for undergraduate and graduate courses in CS and NLP.
+          - >-
+            Designing and delivering lectures and practical sessions, developing
+            course materials, and assessing student performance for
+            undergraduate and graduate courses in CS and NLP.
   - organization: University of Strasbourg, LiLPa
     url: https://lilpa.unistra.fr/
     img: assets/lilpa_min.svg
@@ -48,7 +51,9 @@ work:
             search, filter, sort, and analyze trends across ≈1,000 plays and
             10,000+ characters
           - Conceptualized and executed intuitive and appealing UI/UX design
-          - Created customized, interactive data visualizations using D3.js and Leaflet
+          - >-
+            Created customized, interactive data visualizations using D3.js and
+            Leaflet
   - organization: Valve Corporation
     url: https://www.valvesoftware.com/en/
     img: assets/valve.svg
@@ -71,6 +76,14 @@ education:
     courses: null
     highlights:
       - "*Thesis*: Mitigating Gender Biases in NLP Data for French"
+      - >-
+        *Description*: Research focused on quantifying and mitigating gender
+        biases induced by the use of masculine generics by instruct-based LLMs
+        in French. Involves model evaluation, dataset augmentation, and
+        development of bias mitigation techniques through steering, constrained
+        decoding, and fine-tuning. Conducting psycholinguistic experiments to
+        assess human perception of gender-biased and neutral outputs in an LLM
+        usage context.
       - "*Supervisor*: Amalia Todirascu"
   - title: Master's in Natural Language Processing
     institution: University of Strasbourg
@@ -89,6 +102,7 @@ education:
       - >-
         *Thesis*: Automatic Gender-Neutral Rewriting Using Human Collective
         Nouns in French
+        [link](https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf)
   - title: B.A. in English Studies
     institution: Aix-Marseille University
     url: https://www.univ-amu.fr/
@@ -109,10 +123,51 @@ awards:
     location: Strasbourg, France
     highlights:
       - >-
-        Selected as one of 8 recipients out of 18 applicants for a 3-year
-        fellowship (≈€81,000) to support personal PhD research
+        Selected as one of 8 recipients out of 18 pre-selected applicants for a
+        3-year fellowship (≈€81,000) to support personal PhD research
 certificates: null
 publications:
+  - name: >-
+      Gender Bias Beyond Stereotypes: Towards Linguistically Gender-Fair
+      Conversational LLMs
+    type: conference
+    authors:
+      - Doyen, Enzo
+      - Todirascu, Amalia
+    year: 2026
+    conference: >-
+      Proceedings of the 7th Workshop on Gender Bias in Natural Language
+      Processing (GeBNLP)
+    location: Online
+    doi: TODO
+  - name: >-
+      Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine
+      Generics Bias
+    type: conference
+    authors:
+      - Doyen, Enzo
+      - Todirascu, Amalia
+    year: 2026
+    conference: >-
+      Proceedings of the 2026 Conference on Empirical Methods in Natural
+      Language Processing
+    location: Budapest, Hungary
+    doi: TODO
+  - name: Last Translation Benchmark
+    type: preprint
+    authors:
+      - Zouhar, Vilém
+      - Bafna, Niyati
+      - Choudhary, Mukund
+      - Züfle, Maike
+      - Rajaee, Sara
+    skip-authors: true
+    last-authors:
+      - Sagot, Benoît
+      - Ni, Jingwei
+      - Fan, Yu
+    year: 2026
+    doi: 10.48550/arXiv.2609.04173
   - name: "GeNRe: A French Gender-Neutral Rewriting System Using Collective Nouns"
     type: conference
     authors:
@@ -124,15 +179,6 @@ publications:
       Linguistics
     location: Vienna, Austria
     doi: 10.18653/v1/2025.findings-acl.411
-  - name: >-
-      Man Made Language Models? Evaluating LLMs' Perpetuation of Masculine
-      Generics Bias
-    type: preprint
-    authors:
-      - Doyen, Enzo
-      - Todirascu, Amalia
-    year: 2025
-    doi: 10.48550/arXiv.2502.10577
   - name: Thealtres visualization application
     type: app
     authors:
@@ -141,18 +187,44 @@ publications:
     version: 1.0.0
     year: 2024
     doi: 10.5281/zenodo.11289443
+talks:
   - name: >-
-      Neutralisation automatique du genre à travers l'utilisation de noms
-      collectifs en français
-    type: masters
+      Emplois et sémantique de l'adverbe _perso_ dans les discours de réseaux
+      sociaux
+    english: null
     authors:
       - Doyen, Enzo
-    year: 2024
-    university: University of Strasbourg
-    url: >-
-      https://publication-theses.unistra.fr/public/memoires/2024/FLCE/2024_DOYEN_Enzo.pdf
-talks:
-  - name: "Textual Cohesion in SLM-Generated Texts: Referential Expressions and Gender"
+      - Miyakoshi, Shun
+    conference-intro: "Talk:"
+    conference: Tsukuba Global Science Week 2026, PILE Symposium
+    location: Tsukuba, Japan (Remote)
+    date: 2026-10-03T00:00:00.000Z
+    url: https://tgsw.tsukuba.ac.jp/?lang=en
+  - name: Constrained Decoding for Gender-Fair French Language Generation in LLMs
+    english: null
+    authors:
+      - Doyen, Enzo
+      - Todirascu, Amalia
+    conference-intro: "Poster Session:"
+    conference: Machine Learning Summer School 2026
+    location: New York City, NY, USA
+    date: 2026-06-24T00:00:00.000Z
+    url: https://www.edoyen.com/academia#poster-mlss
+  - name: >-
+      Analyse préliminaire de l'adverbe _perso_ dans les discours de réseaux
+      sociaux
+    english: null
+    authors:
+      - Miyakoshi, Shun
+      - Doyen, Enzo
+    conference-intro: "Poster Session:"
+    conference: LiLPa Seminar
+    location: Strasbourg, France
+    date: 2026-05-03T00:00:00.000Z
+    url: https://www.edoyen.com/academia#poster-lilpa
+  - name: >-
+      Textual Cohesion in SLM-Generated Texts: Referential Expressions and
+      Gender
     english: null
     authors:
       - Todirascu, Amalia
@@ -166,6 +238,7 @@ talks:
     english: null
     authors:
       - Doyen, Enzo
+      - Todirascu, Amalia
     conference-intro: "Poster Session:"
     conference: ALPS 2025
     location: Aussois, France
@@ -191,6 +264,25 @@ talks:
     date: 2024-10-17T00:00:00.000Z
     url: https://www.edoyen.com/academia#poster-thealtres
 schools:
+  - name: Machine Learning Summer School on Reliability & Safety
+    url: https://mlss2026.mlinpl.org/
+    affiliation: "Jagiellonian University in Krakow\_|\_ML in PL Association\_|\_Google"
+    location: Kraków, Poland
+    date: 2026-07-01T00:00:00.000Z
+    highlights:
+      - >-
+        Participated to a 5-day program of lectures on machine learning with a
+        focus on AI safety, reliability and robustness
+  - name: Machine Learning Summer School 2026
+    url: https://cfe.columbia.edu/content/mlss2
+    affiliation: "Columbia University\_|\_Bloomberg"
+    location: New York City, NY, USA
+    date: 2026-06-16T00:00:00.000Z
+    highlights:
+      - >-
+        Participated to an intensive and highly competitive (16.67% acceptance
+        rate) 2-week program of lectures and workshops on machine learning
+        delivered by leading researchers
   - name: ALPS 2025
     url: http://alps-2025.imag.fr/
     affiliation: "LIG (Univ. Grenoble Alpes)\_|\_Naver Labs Europe\_|\_Cohere"
@@ -200,30 +292,23 @@ schools:
       - >-
         Participated to a 28-hour program comprised of lectures, project
         sessions and poster sessions with world-class NLP researchers
-  - name: Lexicon Summer School
-    url: https://www.lexiconsummerschool.com/
-    affiliation: University of Granada
-    location: Almuñécar, Spain
-    date: 2023-08-01T00:00:00.000Z
-    highlights:
-      - >-
-        Participated to a 30-hour program of seminars and workshops in
-        terminology and artificial intelligence with global experts
 volunteering:
   - title: ACL 2025
     location: Vienna, Austria
     url: https://2025.aclweb.org/
     highlights:
       - >-
-        Provided a warm welcome to attendees and ensured a smooth and quick registration process
-      - Guided attendees to their sessions, dealt with crowd management and provided assistance and guidance as needed
+        Provided a warm welcome to attendees and ensured a smooth and quick
+        registration process
+      - >-
+        Guided attendees to their sessions, dealt with crowd management and
+        provided assistance and guidance as needed
 teaching:
   - name: Traduction automatique
     english: Machine Translation
     fullresp: true
     position: University of Strasbourg
-    semester: |-
-      2025
+    semester: "2025"
     level: |-
       Master's
        (2nd year)
@@ -231,8 +316,7 @@ teaching:
     english: Information Retrieval
     fullresp: true
     position: University of Strasbourg
-    semester: |-
-      2025
+    semester: "2025"
     level: |-
       Master's
        (2nd year)
@@ -242,8 +326,7 @@ teaching:
     position: >-
       Institut européen des métiers de la traduction (IEMT); University of
       Strasbourg
-    semester: |-
-      2024 – 2025
+    semester: 2024 – 2026
     level: |-
       Master's
        (1st year)
@@ -251,8 +334,7 @@ teaching:
     english: Introduction to HTML/CSS
     fullresp: true
     position: University of Strasbourg
-    semester: |-
-      2024 – 2026
+    semester: 2024 – 2026
     level: |-
       Bachelor's
        (2nd-3rd years)
@@ -260,8 +342,7 @@ teaching:
     english: Interdisciplinary supervised project
     fullresp: false
     position: University of Strasbourg
-    semester: |-
-      2025
+    semester: "2025"
     level: |-
       Master's
        (2nd year)
@@ -269,8 +350,7 @@ teaching:
     english: Corpus linguistics
     fullresp: false
     position: University of Strasbourg
-    semester: |-
-      2024
+    semester: "2024"
     level: |-
       Master's
        (1st year)
@@ -278,20 +358,46 @@ teaching:
     english: Corpus analysis
     fullresp: false
     position: University of Strasbourg
-    semester: |-
-      2024
+    semester: "2024"
     level: |-
       Master's
        (2nd year)
 reviewing:
-  - name: Transactions on Asian and Low-Resource Language Information Processing
+  - name: GeBNLP @ AACL-IJCNLP 2026
+    publisher: ACL
+    type: Workshop
+    dates: "2026"
+    best: false
+    best-link: null
+  - name: NeurIPS 2026 Ethics Reviewing
+    publisher: NeurIPS
+    type: Conference
+    dates: "2026"
+    best: false
+    best-link: null
+  - name: LT-EDI 2026 @ ACL 2026
+    publisher: ACL
+    type: Workshop
+    dates: "2026"
+    best: false
+    best-link: null
+  - name: DravidianLangTech-2026 @ ACL 2026
+    publisher: ACL
+    type: Workshop
+    dates: "2026"
+    best: true
+    best-link: https://aclanthology.org/2026.dravidianlangtech-1.pdf
+  - name: TALLIP
     publisher: ACM
-    dates: "2025 - 2026"
+    type: Journal
+    dates: "2025"
+    best: false
+    best-link: null
 projects:
   - name: touying-unistra-pristine
     url: ""
     github: spidersouris/touying-unistra-pristine
-    github-stars: 14
+    github-stars: 22
     startDate: 2024-08-01T00:00:00.000Z
     endDate: ""
     highlights:
@@ -301,7 +407,7 @@ projects:
   - name: termic
     url: https://termic.me/
     github: spidersouris/termic
-    github-stars: 21
+    github-stars: 25
     startDate: 2023-05-01T00:00:00.000Z
     endDate: ""
     highlights:
@@ -309,10 +415,6 @@ projects:
         Designed and developed a full-stack web app replacement/alternative to
         Microsoft Terminology Search used by thousands of translators and
         terminologists around the world
-      # - >-
-      #   Developed open-source Python scripts to process and clean
-      #   Microsoft-provided terminology files, and to extract terminologic data
-      #   from VSCode
 skills:
   - category: Programming
     skills:

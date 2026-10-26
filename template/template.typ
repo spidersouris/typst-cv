@@ -63,7 +63,7 @@
 #show: doc => cvinit(doc)
 
 #cvheading(cvdata, uservars)
-#cveducation(cvdata)
+#cveducation(cvdata, uservars)
 #cvwork(cvdata)
 #cvprojects(cvdata, uservars, title: "Featured Programming Projects")
 #cvpublications(cvdata, uservars)
@@ -71,7 +71,6 @@
 #cvawards(cvdata)
 #cvschools(cvdata, uservars)
 #cvvolunteering(cvdata, uservars)
-//#cvreviewing(cvdata) //! temporarily switch teaching and reviewing to avoid large blank space on p. 2; undo when more content
+#cvreviewing(cvdata, uservars)
 #cvteaching(cvdata)
-#cvreviewing(cvdata)
 #cvskills(cvdata)

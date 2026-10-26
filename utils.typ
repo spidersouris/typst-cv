@@ -74,12 +74,15 @@
 //   - auths: A list of authors to be formatted.
 //   - max_count: Maximum number of authors to display before using "et al."
 //   - me: The author's name to be highlighted, if applicable.
-#let format-authors(auths, max_count, me) = {
+#let format-authors(auths, max-count, me, skip-authors, last-auths) = {
   // Initialize an empty list to hold the formatted authors.
-  let formatted_authors = ()
+  let formatted-authors = ()
+  // optional, only if skip-authors = true
+  // to show last authors for papers with many of them
+  let formatted-authors-last = ()
 
-  // Determine the number of authors to display, limited by `max_count`.
-  let count = calc.min(auths.len(), max_count) - 1
+  // Determine the number of authors to display, limited by max-count
+  let count = calc.min(auths.len(), max-count) - 1
 
   // Create a list of indices for authors using a while loop.
   let indices = ()
@@ -99,14 +102,25 @@
     if not me == none and author == me {
       author = strong(me)
     }
-    formatted_authors.push(author)
+    formatted-authors.push(author)
+  }
+
+  if skip-authors {
+    for auth in last-auths {
+      let parts = auth.split(", ")
+      let author = text(parts.at(0) + ", " + parts.at(1).first() + ".")
+      formatted-authors-last.push(author)
+    }
   }
 
   // Return the formatted list of authors, appending "et al." if necessary.
-  if auths.len() > max_count {
-    return [#formatted_authors.join(", ") _et. al._]
+  if skip-authors {
+    return [#formatted-authors.join(", ") … #strong(me), … #formatted-authors-last.join(", ")]
+  }
+  if auths.len() > max-count {
+    return [#formatted-authors.join(", ") _et. al._]
   } else {
-    return [#formatted_authors.join(", ", last: " & ")]
+    return [#formatted-authors.join(", ", last: " & ")]
   }
 }
 
